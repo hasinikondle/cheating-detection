@@ -52,4 +52,10 @@
 ['21:37:19.658333', 'Face detecting properly.', 'No Blink', 'center', 'Mouth Close', [('person', 0.7395115494728088)], -1]
 ['21:37:19.985067', 'Face detecting properly.', 'No Blink', 'left', 'Mouth Close', [('person', 0.7076312899589539)], -1]
 ['21:37:20.276865', 'Face detecting properly.', 'Blink count: 1', 'center', 'Mouth Close', [('person', 0.8016493916511536)], -1]
-['21:37:20.654332', 'Face detecting properly.', 'Blink count: 1', 'left', 'Mouth Close', [('person', 0.6738070845603943)], -1]
+['21:37:20.654332', 'Face detecting properly.', 'Blink count: 1', 'left', 'Mouth Close', [('person', 0.6738070845603943)], -1]23:16:58.408661 - Tab switch or window minimized
+23:17:00.308384 - Returned to tab
+23:17:03.233103 - Tab switch or window minimized
+23:17:04.149827 - Returned to tab
+23:17:06.351529 - Tab switch or window minimized
+23:17:14.801669 - Returned to tab
+23:17:22.222521 - Tab switch or window minimized

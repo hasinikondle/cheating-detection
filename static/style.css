@@ -1,28 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   background: #990073;
-  /* position: relative; */
-  
-  /* Disable right-click context menu */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-} 
-
-/* Disable user interaction with specific elements */
-.no-interaction {
-    pointer-events: none;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
+.no-interaction {
+  pointer-events: none;
+}
 
 ::selection {
   color: #fff;
@@ -37,7 +37,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  z-index: 4;
 }
 
 .info_box.activeInfo,
@@ -54,7 +55,6 @@ body {
   font-weight: 500;
   color: #990073;
   padding: 15px 30px;
-  outline: none;
   border: none;
   border-radius: 5px;
   background: #fff;
@@ -73,12 +73,10 @@ body {
 
 .info_box .info-title {
   height: 60px;
-  width: 100%;
+  padding: 0 30px;
   border-bottom: 1px solid lightgrey;
   display: flex;
   align-items: center;
-  padding: 0 30px;
-  border-radius: 5px 5px 0 0;
   font-size: 20px;
   font-weight: 600;
 }
@@ -96,55 +94,53 @@ body {
   font-weight: 600;
   color: #990073;
 }
+
 .info_box .buttons {
   height: 60px;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   padding: 0 30px;
-  float: left;
   border-top: 1px solid lightgrey;
 }
+
 .info_box .buttons button {
   margin: 0 5px;
   height: 40px;
   width: 100px;
   font-size: 16px;
   font-weight: 500;
-  cursor: pointer;
-  border: none;
-  outline: none;
   border-radius: 5px;
   border: 1px solid #990073;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .quiz_box {
-  width: 550px;
+  width: 800px; /* increased width */
   background: #fff;
   border-radius: 5px;
-  margin-left: 180px;
-  transform: translate(-50%, -50%) scale(0.9);
+  top: 55%;         /* move it slightly below center vertically */
+  left: 40%;        /* move it more to the left */
+  transform: translate(-30%, -50%);
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
 .quiz_box header {
-  position: relative;
-  z-index: 2;
-  height: 70px;
-  padding: 0 30px;
+  height: 45px; /* decreased height */
+  padding: 0 25px; /* adjusted padding */
   background: #fff;
   border-radius: 5px 5px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .quiz_box header .title {
-  font-size: 20px;
+  font-size: 18px; /* keep moderate font size */
   font-weight: 600;
 }
 
@@ -152,29 +148,29 @@ body {
   color: #990073;
   background: #cce5ff;
   border: 1px solid #b8daff;
-  height: 45px;
+  height: 35px; /* smaller height */
   padding: 0 8px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 145px;
+  width: 140px; /* slightly wider */
 }
 
 .quiz_box header .timer .time_left_txt {
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
   user-select: none;
 }
 
 .quiz_box header .timer .timer_sec {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  height: 30px;
-  width: 45px;
+  height: 26px;
+  width: 42px;
   color: #fff;
   border-radius: 5px;
-  line-height: 30px;
+  line-height: 26px;
   text-align: center;
   background: #343a40;
   border: 1px solid #343a40;
@@ -183,14 +179,17 @@ body {
 
 .quiz_box header .time_line {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: -6px;  /* moved a bit below */
+  left: -10px;   /* moved to the left */
   height: 3px;
   background: #990073;
+  width: calc(100% + 20px);
 }
 
+
+
 section {
-  padding: 25px 30px 20px 30px;
+  padding: 25px 30px 20px;
   background: #fff;
 }
 
@@ -200,7 +199,7 @@ section .que_text {
 }
 
 section .option_list {
-  padding: 20px 0px;
+  padding: 20px 0;
   display: block;
 }
 
@@ -216,10 +215,6 @@ section .option_list .option {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-section .option_list .option:last-child {
-  margin-bottom: 0px;
 }
 
 section .option_list .option:hover {
@@ -244,27 +239,26 @@ section .option_list .option.disabled {
   pointer-events: none;
 }
 
-section .option_list .option .icon {
+.option_list .option .icon {
   height: 26px;
   width: 26px;
-  border: 2px solid transparent;
   border-radius: 50%;
-  text-align: center;
   font-size: 13px;
-  pointer-events: none;
-  transition: all 0.3s ease;
+  text-align: center;
   line-height: 24px;
+  pointer-events: none;
 }
+
 .option_list .option .icon.tick {
   color: #23903c;
-  border-color: #23903c;
+  border: 2px solid #23903c;
   background: #d4edda;
 }
 
 .option_list .option .icon.cross {
   color: #a42834;
   background: #f8d7da;
-  border-color: #a42834;
+  border: 2px solid #a42834;
 }
 
 footer {
@@ -287,7 +281,7 @@ footer .total_que span p {
 }
 
 footer .total_que span p:first-child {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 footer button {
@@ -374,8 +368,6 @@ footer button.show {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  border: none;
-  outline: none;
   border-radius: 5px;
   border: 1px solid #990073;
   transition: all 0.3s ease;
@@ -383,10 +375,6 @@ footer button.show {
 
 .buttons button.restart {
   color: #fff;
-  background: #990073;
-}
-
-.buttons button.restart:hover {
   background: #990073;
 }
 
@@ -433,7 +421,6 @@ footer button.show {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-
   background-color: white;
   padding: 6rem;
   border-radius: 5px;
@@ -466,9 +453,6 @@ footer button.show {
   vertical-align: middle;
   font-size: 20px;
   font-weight: 400;
-}
-
-table {
   width: 100%;
 }
 
@@ -477,29 +461,57 @@ table {
   padding: 15px;
 }
 
-.camera{
-  margin-left: 0px auto;
-  margin-top: 100px;
-	width: 300px;
-	height: 175px;
+.camera {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  border: 2px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
 }
 
 #videoElement {
-	width: 280px;
-	height: 200px;
-  /* mirrored selfie camera */
-  /* transform: rotateY(180deg);
-  -webkit-transform:rotateY(180deg); */
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between logo and text */
+  position: fixed; /* stays at top left */
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 1001; /* to stay on top */
 }
 
-/* .like {
-  border: none;
-  box-shadow: none;
+.logo {
+  width: 50px; /* adjust size as needed */
+  height: auto;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-title {
   font-size: 22px;
-  padding: 20px;
-  cursor: pointer;
-  border-radius: 12px;
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-} */
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  user-select: none;
+}
+
+.tagline {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  user-select: none;
+}
+

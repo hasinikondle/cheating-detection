@@ -26,7 +26,8 @@ def get_2d_points(img, rotation_vector, translation_vector, camera_matrix, val):
     point_3d.append((front_size, -front_size, front_depth))
     point_3d.append((-front_size, -front_size, front_depth))
 
-    point_3d = np.array(point_3d, dtype=np.float).reshape(-1, 3)
+    point_3d = np.array(point_3d, dtype=float).reshape(-1, 3)
+
 
     #Map to 2D image points
     (point_2d, _) = cv2.projectPoints(point_3d, rotation_vector, translation_vector, camera_matrix, dist_coeffs)

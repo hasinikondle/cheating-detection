@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>VigilEye</title>
+    <link rel="icon" href="../static/images/Portal.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Student Verification</title>
+
+    <style>
+        /* Container to center video and canvas */
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;        /* center horizontally */
+            justify-content: center;    /* center vertically */
+            margin-top: 30px;
+        }
+
+        video, canvas {
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            width: 640px;
+            height: 400px;
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="static/images/Portal.jpg" alt="Logo" class="logo" />
+
+        <div class="title-container">
+            <h1 class="page-title">Cheating Detection in Online Exams</h1>
+            <p class="tagline">VigilEye</p>
+        </div>
+    </div>
+
+    
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <div class="media-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <button onclick="capture()">Capture & Verify</button>
+        {% if error %}
+            <p style="color: white; font-weight: bold; margin-top: 10px;">{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <form id="upload-form" method="POST" action="/verify_face" enctype="multipart/form-data" style="display: none;">
+        <input type="file" name="photo" id="photo-input" />
+    </form>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const input = document.getElementById('photo-input');
+
+        // Set canvas size to match video size (keep consistent)
+        canvas.width = 640;
+        canvas.height = 480;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+        function capture() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(blob => {
+                const file = new File([blob], 'capture.jpg', { type: 'image/jpeg' });
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                input.files = dataTransfer.files;
+                document.getElementById('upload-form').submit();
+            }, 'image/jpeg');
+        }
+    </script>
+</body>
+</html>

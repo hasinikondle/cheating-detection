@@ -87,7 +87,7 @@ submitButton.addEventListener("click", function(){
         .then(data => {
             if (data == true){
                 console.log('Done, Login Credentials matched.');
-                window.location.replace("./quiz_html");
+                window.location.replace("./verify");
             }
             else{
                 window.alert("Login credentials doesn't with our database.")

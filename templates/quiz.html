@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
-    <title>Quizo</title>
+    <title>VigilEye</title>
     <link rel="icon" href="../static/images/Portal.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
+    
     <!-- start quiz button  -->
+     <div class="header">
+        <img src="static/images/Portal.jpg" alt="Logo" class="logo">
+
+        <div class="title-container">
+        <h1 class="page-title">Cheating Detection in Online Exams</h1>
+        <p class="tagline">VigilEye</p>
+        </div>
+    </div>
     <div class="start_btn"><button>Start Quiz</button></div>
 
     <!-- info box  -->
@@ -36,7 +46,7 @@
     <!-- Quiz box  -->
     <div class="quiz_box">
         <header>
-            <div class="title">Quizo</div>
+            <div class="title">VigilEye</div>
             <div class="timer">
                 <div class="time_left_txt">Time Left</div>
                 <div class="timer_sec">15</div>
@@ -76,6 +86,9 @@
     <div class="camera">
         <img src="{{ url_for('video_feed') }}" id="videoElement" >
     </div>
+
+
+    
 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
