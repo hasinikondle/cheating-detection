@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI based Online Exam Proctoring System
 AI-Based Online Exam Proctoring System is an innovative project designed to maintain the integrity and security of online exams. Utilizing advanced artificial intelligence algorithms, this system monitors and evaluates test-takers in real-time, detecting any suspicious behavior or potential cheating attempts. Through features such as facial recognition, eye tracking, and keystroke analysis, it ensures a fair and transparent examination environment.
 
@@ -25,3 +26,27 @@ Moreover, the system generates a comprehensive log file named "activity.txt" tha
 
 ## Contact 
 For any feedback or queries, please reach out to me at [LinkedIn](https://www.linkedin.com/in/krishnakumaragrawal/)
+=======
+# online-exam-cheating-detection
+A real-time AI-based proctoring system for detecting cheating behavior during online examinations using facial recognition, audio analysis, and activity monitoring.
+
+toring System for Cheating Detection in Online Exams
+
+This project implements a real-time cheating detection system designed for online examinations. It leverages artificial intelligence and machine learning to monitor and detect suspicious behavior using facial recognition, audio activity, and screen interaction.
+
+## 🔍 Features
+
+- 👤 Facial Recognition
+- 🎧 Audio/Noise Detection
+- 👀 Gaze and Head Movement Tracking
+- 📋 Plagiarism and Keyboard Activity Monitoring
+- 📷 Webcam Integration for Proctoring
+- 🖥️ Screen Sharing & Copy-Paste Detection
+
+## 🛠️ Tech Stack
+
+- Python, Flask
+- OpenCV, DeepFace, MediaPipe
+- Machine Learning (Scikit-learn)
+- MySQL (for user/login info)
+>>>>>>> 6ba553d2eb13596e0196b7c380f00acbba805223
