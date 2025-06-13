@@ -24,8 +24,6 @@ Moreover, the system generates a comprehensive log file named "activity.txt" tha
 8. Flask Server
 9. SQL Database
 
-## Contact 
-For any feedback or queries, please reach out to me at [LinkedIn](https://www.linkedin.com/in/krishnakumaragrawal/)
 =======
 # online-exam-cheating-detection
 A real-time AI-based proctoring system for detecting cheating behavior during online examinations using facial recognition, audio analysis, and activity monitoring.
@@ -49,4 +47,4 @@ This project implements a real-time cheating detection system designed for onlin
 - OpenCV, DeepFace, MediaPipe
 - Machine Learning (Scikit-learn)
 - MySQL (for user/login info)
->>>>>>> 6ba553d2eb13596e0196b7c380f00acbba805223
+
